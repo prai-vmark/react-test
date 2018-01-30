@@ -1,15 +1,13 @@
 import React, { Component } from "react";
-import Modal from "../../Modal";
 import LookupRight from "./lookup-right";
+import LookupLeft from "./lookup-left";
 
 const data = require("../../data.json").Data;
+
 const tmpCoinList = [];
+Object.keys(data).forEach(key => tmpCoinList.push({ key, value: data[key] }));
 
-for (let key in data) {
-  tmpCoinList.push({ key, value: data[key] });
-}
-
-const coinList = tmpCoinList; //.slice(8, 200);
+const coinList = tmpCoinList;
 // console.log(coinList[0]);
 
 class Utility extends Component {
@@ -17,17 +15,18 @@ class Utility extends Component {
     super(props);
 
     this.state = {
-      selectedCoin: { key: "", value: "" }
+      selectedCoin: {}
     };
 
     this.selectCoin = this.selectCoin.bind(this);
   }
 
   selectCoin(coin) {
-    console.log("called with ", coin);
-    this.setState({
-      selectedCoin: coin
-    });
+    let newCoin = coin;
+    if (this.state.selectedCoin.Name === newCoin.Name) {
+      newCoin = {};
+    }
+    this.setState({ selectedCoin: newCoin });
   }
 
   render() {
@@ -36,12 +35,7 @@ class Utility extends Component {
         <header className="card-header">Lookup Utility</header>
         <div className="card-content">
           <div className="content">
-            <div className="left-content">
-              <h4>John</h4>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-              nec iaculis mauris. <a>@bulmaio</a>.
-              <a href="#">#css</a> <a href="#">#responsive</a>
-            </div>
+            <LookupLeft selectedCoin={this.state.selectedCoin} />
             <LookupRight
               coinList={coinList}
               selectCoin={this.selectCoin}

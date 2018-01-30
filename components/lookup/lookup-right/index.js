@@ -1,8 +1,7 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
-
 import DisplayTable from "./DisplayTable";
-
+console.log("here");
 class RightContent extends Component {
   constructor(props) {
     super(props);
@@ -25,14 +24,14 @@ class RightContent extends Component {
     }
 
     this.timer = setTimeout(() => {
-      console.log("debouncedSearch called");
+      // console.log("debouncedSearch called");
       this.debouncedSearch(val);
     }, delay);
   }
 
   debouncedSearch(val) {
     if (val !== "") {
-      let coinList = this.state.coinListSeed.filter(
+      const coinList = this.state.coinListSeed.filter(
         coin => coin.key.indexOf(val.toUpperCase()) !== -1
       );
       this.setState({
@@ -65,9 +64,12 @@ class RightContent extends Component {
 }
 
 RightContent.propTypes = {
-  coinList: PropTypes.array.isRequired,
+  coinList: PropTypes.arrayOf(PropTypes.any).isRequired,
   selectCoin: PropTypes.func.isRequired,
-  selectedCoin: PropTypes.object.isRequired
+  selectedCoin: PropTypes.shape({
+    key: PropTypes.string,
+    value: PropTypes.any
+  }).isRequired
 };
 
 export default RightContent;

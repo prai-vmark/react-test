@@ -9,16 +9,14 @@
       "jsx": true
     }
   },
-  "settings": {
-    "import/resolver": {
-      "webpack": { "config": "webpack.config.js" }
-    }
-  },
   "rules": {
+    "dot-notation": 0,
     "no-console": 0,
+    "linebreak-style": 0,
     "no-underscore-dangle": 0,
     "react/prop-types": 0,
     "jax-a11y": 0,
+    "react/jsx-filename-extension": 0,
     "jsx-a11y/anchor-is-valid": [
       0,
       {

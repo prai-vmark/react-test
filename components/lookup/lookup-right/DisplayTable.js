@@ -2,28 +2,25 @@ import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 
 class DisplayTable extends Component {
-  constructor(props) {
-    super(props);
-  }
+  // componentWillUpdate(next) {
+  //   // console.log("component updating");
+  //   // this.time = new Date();
+  //   // console.log(next);
+  // }
 
-  componentWillUpdate(next) {
-    // console.log("component updating");
-    // this.time = new Date();
-    // console.log(next);
-  }
-
-  componentDidUpdate(prev, next) {
-    // setTimeout(() => {
-    //   console.log("component update complete");
-    //   console.log("time: ", new Date().getTime() - this.time.getTime());
-    //   console.log(prev);
-    //   console.log(next);
-    // }, 0);
-  }
+  // componentDidUpdate(prev, next) {
+  //   // setTimeout(() => {
+  //   //   console.log("component update complete");
+  //   //   console.log("time: ", new Date().getTime() - this.time.getTime());
+  //   //   console.log(prev);
+  //   //   console.log(next);
+  //   // }, 0);
+  // }
+  // componentWillReceiveProps(nextProps) {
+  //   console.log(nextProps);
+  // }
 
   rowClickHandler(value) {
-    console.log("clicked");
-    console.log(value);
     this.props.selectCoin(value);
   }
 
@@ -43,7 +40,13 @@ class DisplayTable extends Component {
           <table id="coin-table" className="table is-hoverable is-narrow">
             <tbody>
               {this.props.coinList.map(({ value }) => (
-                <tr key={value.Id} onClick={() => this.rowClickHandler(value)}>
+                <tr
+                  key={value.Id}
+                  onClick={() => this.rowClickHandler(value)}
+                  className={
+                    this.props.selectedCoin.Id === value.Id ? "selected" : ""
+                  }
+                >
                   <td>+</td>
                   <td>{value.Symbol}</td>
                   <td>{value.CoinName}</td>
@@ -58,9 +61,12 @@ class DisplayTable extends Component {
 }
 
 DisplayTable.propTypes = {
-  coinList: PropTypes.array.isRequired,
+  coinList: PropTypes.arrayOf(PropTypes.any).isRequired,
   selectCoin: PropTypes.func.isRequired,
-  selectedCoin: PropTypes.object.isRequired
+  selectedCoin: PropTypes.shape({
+    key: PropTypes.string,
+    value: PropTypes.any
+  }).isRequired
 };
 
 export default DisplayTable;

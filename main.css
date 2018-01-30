@@ -4,6 +4,7 @@
 
 .addwidget .card-content {
   padding: 1rem;
+  padding-bottom: 2rem;
 }
 
 .addwidget .card-header {
@@ -81,4 +82,51 @@
   overflow: auto;
   border-left: 1px solid #cccccc;
   border-bottom: 1px solid #cccccc;
+}
+
+.content table thead tr:hover {
+  background-color: #dbdbdb;
+}
+
+.info-container {
+  display: flex;
+}
+
+/* coin-card */
+.coin-card {
+  width: 180px;
+  padding: 10px;
+  border: 1px solid #ececec;
+}
+.coin-card img {
+  display: block;
+  padding: 10px;
+  border: 1px solid #ececec;
+  border-radius: 2px;
+  width: 158px;
+  height: 158px;
+}
+
+.coin-label {
+  text-align: center;
+  padding: 10px 0 2px 0;
+  /* border-top: 1px solid #ececec; */
+}
+
+.coin-name {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.coin-info {
+  margin-left: 20px;
+}
+
+.price-label {
+  font-size: 1.2em;
+}
+
+.coin-price {
+  font-size: 2em;
+  line-height: 1.2em;
 }
