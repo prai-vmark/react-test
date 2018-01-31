@@ -1,5 +1,4 @@
 import React, { Component, fragment } from "react";
-import Modal from "./Modal";
 import Utility from "./components/lookup";
 
 const data = require("./data.json").Data;
@@ -10,7 +9,6 @@ for (let key in data) {
 }
 
 const coinList = tmpCoinList.slice(8, 300);
-console.log(coinList[0]);
 
 class App extends Component {
   render() {
