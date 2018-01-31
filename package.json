@@ -17,6 +17,12 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.17.1",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "socket.io-client": "^2.0.4"
+  },
+  "devDependencies": {
     "babel-eslint": "^8.2.1",
     "babel-preset-react": "^6.24.1",
     "eslint": "^4.16.0",
@@ -28,12 +34,7 @@
     "eslint-plugin-prettier": "^2.5.0",
     "eslint-plugin-react": "^7.6.0",
     "prettier": "^1.10.2",
-    "prop-types": "^15.6.0",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "socket.io-client": "^2.0.4"
-  },
-  "devDependencies": {
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "gh-pages": "^1.1.0"
   }
 }
