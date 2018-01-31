@@ -33,7 +33,7 @@ class CoinForm extends Component {
     }
     this.props.addToFolio(quantity, dt);
     this.quantityInput.value = "";
-    this.dateInput.value = "";
+    // this.dateInput.value = "";
   }
 
   render() {
