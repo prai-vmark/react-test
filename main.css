@@ -39,15 +39,15 @@
   padding-bottom: 0;
   margin-bottom: 0;
 }
-.content table:not(:last-child) {
+.content .right-content table:not(:last-child) {
   margin-bottom: 0;
 }
 
-.addwidget table thead tr {
+.addwidget .right-content thead tr {
   background: #dbdbdb;
 }
 
-.addwidget table thead tr th {
+.addwidget .right-content thead tr th {
   border-right: 1px solid #bdbcbc;
 }
 
@@ -118,10 +118,6 @@
   font-weight: bold;
 }
 
-.coin-info {
-  margin-left: 20px;
-}
-
 .price-label {
   font-size: 1.2em;
 }
@@ -129,4 +125,45 @@
 .coin-price {
   font-size: 2em;
   line-height: 1.2em;
+}
+
+.coin-price.up {
+  color: green;
+}
+
+.coin-price.down {
+  color: red;
+}
+
+.coin-stuff {
+  margin-left: 20px;
+}
+
+.selectedCrypto {
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+.selectedCrypto {
+  font-size: 14px;
+}
+
+.coin-form {
+  margin-top: 40px;
+  width: 100%;
+}
+
+input[name="quantity"] {
+  width: 80px;
+  margin-right: 10px;
+}
+
+.red {
+  color: red;
+}
+.cancel-btn {
+  margin-left: 5px;
+}
+.lookup-control {
+  margin-top: 20px;
 }

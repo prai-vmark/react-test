@@ -2,24 +2,6 @@ import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 
 class DisplayTable extends Component {
-  // componentWillUpdate(next) {
-  //   // console.log("component updating");
-  //   // this.time = new Date();
-  //   // console.log(next);
-  // }
-
-  // componentDidUpdate(prev, next) {
-  //   // setTimeout(() => {
-  //   //   console.log("component update complete");
-  //   //   console.log("time: ", new Date().getTime() - this.time.getTime());
-  //   //   console.log(prev);
-  //   //   console.log(next);
-  //   // }, 0);
-  // }
-  // componentWillReceiveProps(nextProps) {
-  //   console.log(nextProps);
-  // }
-
   rowClickHandler(value) {
     this.props.selectCoin(value);
   }

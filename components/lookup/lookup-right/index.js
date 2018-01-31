@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import DisplayTable from "./DisplayTable";
-console.log("here");
+
 class RightContent extends Component {
   constructor(props) {
     super(props);
@@ -50,7 +50,7 @@ class RightContent extends Component {
         <input
           className="input is-small coin-lookup"
           type="text"
-          placeholder="Text input" // ref={input => (this.searchInput = input)}
+          placeholder="Search" // ref={input => (this.searchInput = input)}
           onChange={this.handleSearchInput}
         />
         <DisplayTable
