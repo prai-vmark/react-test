@@ -100,7 +100,7 @@ function getBaseURL(url) {
 exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
 
-},{}],11:[function(require,module,exports) {
+},{}],13:[function(require,module,exports) {
 var bundle = require('./bundle-url');
 
 function updateLink(link) {
@@ -138,7 +138,7 @@ module.exports = reloadCSS;
         module.hot.dispose(reloadCSS);
         module.hot.accept(reloadCSS);
       
-},{"_css_loader":11}],130:[function(require,module,exports) {
+},{"_css_loader":13}],129:[function(require,module,exports) {
 
 var global = (1, eval)('this');
 var OldModule = module.bundle.Module;
@@ -158,7 +158,7 @@ module.bundle.Module = Module;
 
 if (!module.bundle.parent && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
-  var ws = new WebSocket('ws://' + hostname + ':' + '55380' + '/');
+  var ws = new WebSocket('ws://' + hostname + ':' + '49569' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -259,5 +259,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.require, id);
   });
 }
-},{}]},{},[130])
+},{}]},{},[129])
 //# sourceMappingURL=/dist/f0b1e36b408667ae0920ac826e354d08.map
