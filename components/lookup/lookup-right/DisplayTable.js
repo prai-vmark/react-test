@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 
 class DisplayTable extends Component {
-  rowClickHandler(value) {
+  rowClickHandler = (value) => {
     this.props.selectCoin(value);
   }
 
