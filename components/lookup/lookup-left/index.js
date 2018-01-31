@@ -24,6 +24,7 @@ class LeftContent extends Component {
     this.addToFolio = this.addToFolio.bind(this);
     this.removeCrypto = this.removeCrypto.bind(this);
     this.submitCallback = this.submitCallback.bind(this);
+    this.cancelLookup = this.cancelLookup.bind(this);
   }
 
   componentDidMount() {
@@ -116,6 +117,10 @@ class LeftContent extends Component {
     alert(`Some callback called with ${cryptos.join(', ')}`)
   }
 
+  cancelLookup() {
+    this.setState({ selectedCryptos: [] });
+  }
+
   render() {
     return <div className="left-content">
         <div className="info-container">
@@ -155,7 +160,7 @@ class LeftContent extends Component {
           <button className="button is-primary is-outlined" disabled={!this.state.selectedCryptos.length} onClick={this.submitCallback}>
             Add to Portfolio
           </button>
-          <button disabled={!this.state.selectedCryptos.length} className="button is-danger cancel-btn is-outlined">
+          <button disabled={!this.state.selectedCryptos.length} className="button is-danger cancel-btn is-outlined" onClick={this.cancelLookup}>
             Cancel
           </button>
         </div>
