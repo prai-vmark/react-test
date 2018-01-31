@@ -12,7 +12,7 @@ class DisplayTable extends Component {
         <table className="table is-hoverable is-narrow">
           <thead>
             <tr>
-              <th>Add</th>
+              <th>Rank</th>
               <th>One</th>
               <th>Two</th>
             </tr>
@@ -21,7 +21,7 @@ class DisplayTable extends Component {
         <div className="scroll-table">
           <table id="coin-table" className="table is-hoverable is-narrow">
             <tbody>
-              {this.props.coinList.map(({ value }) => (
+              {this.props.coinList.map(({ value }, index) => (
                 <tr
                   key={value.Id}
                   onClick={() => this.rowClickHandler(value)}
@@ -29,7 +29,7 @@ class DisplayTable extends Component {
                     this.props.selectedCoin.Id === value.Id ? "selected" : ""
                   }
                 >
-                  <td>+</td>
+                  <td className="rank">{index+1}.</td>
                   <td>{value.Symbol}</td>
                   <td>{value.CoinName}</td>
                 </tr>

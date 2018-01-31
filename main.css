@@ -167,3 +167,8 @@ input[name="quantity"] {
 .lookup-control {
   margin-top: 20px;
 }
+
+.rank {
+  font-size: 14px;
+  line-height: 1.7;
+}
